@@ -8,3 +8,5 @@ console.log(filtered);
 
 const filteredArrow = numbers.filter(n => n >= 0);
 console.log(filteredArrow);
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

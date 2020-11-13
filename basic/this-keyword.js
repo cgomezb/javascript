@@ -78,12 +78,12 @@ blog2.showTags();
 /* Changes this keyword */
 
 function run(a, b) {
-  console.log(this);
+  console.log(this, a, b);
 }
 
 run.call({ name: 'Cesar'}, 1, 2);
 run.apply({ name: 'Cesar'}, [1, 2]);
-run.bind({ name: 'Cesar'})();
+run.bind({ name: 'Cesar'}, [1, 2])();
 
 run();
 
@@ -112,3 +112,57 @@ const blog4 = {
 };
 
 blog4.showTags();
+
+/* Additional Examples */
+
+const blog = {
+  title: 'This is my blog',
+  tags: ['tag 1', 'tag 2', 'tag 3'],
+  showTitle() {
+    console.log(this); // blog reference
+  },
+  showTagsV1() {
+    this.tags.forEach(function (tag) {
+      console.log(this, tag); // window reference
+    })
+  },
+  showTagsV2() {
+    this.tags.forEach(function (tag) {
+			console.log(this, tag); // blog reference
+    }, this);
+  },
+  showTagsV3() {
+    this.tags.forEach(function (tag) {
+			console.log(this, tag); // blog reference
+    }.bind(this));
+  },
+  showTagsV4() {
+  	const self = this;
+    this.tags.forEach(function (tag) {
+			console.log(self, tag); // blog reference
+    });
+  },
+  showTagsV5() {
+    this.tags.forEach((tag) => {
+			console.log(this, tag); // blog reference
+    });
+  }
+}
+
+blog.showTitle();
+blog.showTagsV1();
+blog.showTagsV2();
+blog.showTagsV3();
+blog.showTagsV4();
+blog.showTagsV5();
+
+
+const shape = {
+  radius: 10,
+  perimeter: () => {
+    debugger
+    return (2 * Math.PI * this.radius);
+  }
+};
+
+console.log(shape.perimeter());

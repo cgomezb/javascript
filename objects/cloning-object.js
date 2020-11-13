@@ -18,6 +18,6 @@ console.log(another);
 const another = Object.assign({}, person);
 console.log(another);
 
-// /* Usin Spread Operator */
+// /* Using Spread Operator */
 const another = {...person};
 console.log(another);
