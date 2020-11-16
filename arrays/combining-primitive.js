@@ -14,3 +14,10 @@ const slice = combined.slice();
 
 console.log(combined);
 console.log(slice);
+
+// Get the last items
+const last = combined.slice(-1);
+console.log(last); // [6]
+
+const last = combined.slice(-2);
+console.log(last); // [5, 6]
