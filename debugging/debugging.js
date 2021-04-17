@@ -44,6 +44,18 @@ const animalAgeStr = animalAge`This animal is ${turtle.age}`;
 console.log(animalAgeStr);
 
 
+// Another one
+function test(strings, ...parameters) {
+  console.log('strings', strings);
+  console.log('parameters', parameters);
+
+  return `${strings[0]}${parameters[0]}${string[1]}`;
+}
+
+// template strings
+const response = test`Hola ${2} mundo`;
+console.log(response);
+
 // Async and await
 
 const random = () => {

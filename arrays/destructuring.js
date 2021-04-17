@@ -26,9 +26,9 @@ function getValue() {
 }
 
 const [a, b, ...c] = getValue()
-console.log(a);
-console.log(b);
-console.log(c);
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // [3, 4, 5]
 
 // ---------
 
@@ -57,9 +57,9 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Getting the rest of elements of the array
 const [a, b, , ...c] = numbers;
 
-console.log(a);
-console.log(b);
-console.log(c);
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // [4, 5, 6, 7, 8, 9, 10]
 
 // Destructuring complex objects
 

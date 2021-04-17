@@ -28,16 +28,14 @@ console.log(commits[0].author);
 console.log('start');
 let response = await fetch('https://api.github.com/repos/cgomezb/javascript/commits')
   .then(async (res) => {
-    debugger
     console.log('complete');
     let commits = await res.json();
     return commits;
   })
   .catch(err => {
-    debugger
     console.log('error');
   })
-debugger
+
 console.log('after await');
 console.log('response ', response);
 // let commits = await response.json();
@@ -59,12 +57,10 @@ const run = () => {
 console.log('start');
 let response = await run()
   .then(async (res) => {
-    debugger
     console.log('complete');
     return res;
   })
   .catch(err => {
-    debugger
     console.log('error');
     return err;
   })
